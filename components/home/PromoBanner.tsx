@@ -45,6 +45,7 @@ export function PromoBanner({ c }: { c: HomeContent }) {
             {c.offerPillLine2}
           </span>
         </Link>
+        {c.offerTerms && <p className="mt-3 max-w-[620px] text-xs leading-relaxed text-white/75">{c.offerTerms}</p>}
       </div>
     </section>
   );

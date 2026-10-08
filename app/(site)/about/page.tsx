@@ -10,9 +10,9 @@ import { resolveImageUrl } from "@/lib/image";
 import type { AboutSection } from "@/lib/defaults";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Our Mobile Foot Care Nurse in Calgary",
   description:
-    "Foot Aid Leyman is a mobile foot care nurse providing compassionate, professional in-home foot care for seniors and people with mobility challenges in Calgary.",
+    "Foot Aid is a mobile foot care nurse providing compassionate, professional in-home foot care for seniors and people with mobility challenges in Calgary.",
   alternates: { canonical: "/about" },
 };
 

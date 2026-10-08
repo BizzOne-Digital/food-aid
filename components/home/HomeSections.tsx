@@ -109,8 +109,8 @@ export function SafetySection({ c }: { c: HomeContent }) {
           <div className="absolute -bottom-6 right-4 flex items-center gap-3 rounded-2xl bg-ink px-5 py-4 text-white shadow-card-hover sm:right-8">
             <ShieldCheck className="h-8 w-8 text-brand" strokeWidth={1.6} aria-hidden />
             <span className="leading-tight">
-              <span className="block text-sm font-bold">Sterilized Tools</span>
-              <span className="block text-xs text-white/70">Every single visit</span>
+              <span className="block text-sm font-bold">Clean Instruments</span>
+              <span className="block text-xs text-white/70">Prepared for each client</span>
             </span>
           </div>
         </Reveal>
@@ -130,6 +130,50 @@ export function SafetySection({ c }: { c: HomeContent }) {
               </li>
             ))}
           </ul>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/** Retirement homes / care facility partnerships. `asPage` renders it as the standalone page hero (h1) suited to the standalone page. */
+export function FacilitiesSection({ c, asPage = false }: { c: HomeContent; asPage?: boolean }) {
+  const Heading = asPage ? "h1" : "h2";
+  return (
+    <section className={asPage ? "bg-soft py-14 sm:py-20" : "bg-ink py-14 text-white sm:py-20"} aria-labelledby="facilities-heading">
+      <div className="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Reveal className={asPage ? "" : "lg:order-2"}>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-card">
+            <Image src={resolveImageUrl(c.facilitiesImage)} alt="Foot care nurse visiting a senior resident" fill sizes="(min-width:1024px) 560px, 100vw" className="object-cover" />
+          </div>
+        </Reveal>
+        <Reveal delay={100}>
+          <p className="eyebrow">{c.facilitiesEyebrow}</p>
+          <Heading
+            id="facilities-heading"
+            className={`mt-3 font-extrabold tracking-tight ${asPage ? "text-[34px] leading-[1.08] text-ink sm:text-5xl" : "text-3xl text-white sm:text-4xl lg:text-[40px] lg:leading-[1.1]"}`}
+          >
+            {c.facilitiesTitle}
+          </Heading>
+          <p className={`mt-4 text-[15.5px] leading-relaxed ${asPage ? "text-ink/80" : "text-white/80"}`}>{c.facilitiesText}</p>
+          <ul className="mt-6 space-y-3">
+            {c.facilitiesPoints.map((p, i) => (
+              <li key={i} className={`flex items-start gap-3 text-[15px] ${asPage ? "text-ink/85" : "text-white/90"}`}>
+                <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden />
+                {p}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/contact?subject=Care%20facility%20partnership" className="btn-primary px-7 py-3.5">
+              {c.facilitiesCtaLabel} <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            {!asPage && (
+              <Link href="/care-facilities" className="btn border border-white/40 px-7 py-3.5 text-white hover:bg-white/10">
+                Learn More
+              </Link>
+            )}
+          </div>
         </Reveal>
       </div>
     </section>

@@ -5,6 +5,10 @@ export type BookingStatus = (typeof BOOKING_STATUSES)[number];
 
 export const SERVICE_OPTIONS = [
   "Free Foot Assessment",
+  "Routine Foot & Nail Care",
+  "Diabetic Foot Care",
+  "Senior Foot Care",
+  "Thickened Nail Care",
   "Ingrown Nail Care",
   "Callus Care",
   "Corn Care",

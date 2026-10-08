@@ -12,7 +12,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
       <div className="relative hidden overflow-hidden bg-[linear-gradient(135deg,#111_0%,#1a0204_50%,#e50914_130%)] lg:flex lg:flex-col lg:justify-between lg:p-12">
         <div className="flex items-center gap-3 text-white">
           <LogoMark className="h-11 w-11" />
-          <span className="text-2xl font-extrabold">Foot Aid Leyman</span>
+          <span className="text-2xl font-extrabold">Foot Aid</span>
         </div>
         <div className="text-white">
           <p className="text-4xl font-extrabold leading-tight">
@@ -27,7 +27,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
         <div className="w-full max-w-md">
           <div className="mb-8 flex items-center gap-3 lg:hidden">
             <LogoMark />
-            <span className="text-xl font-extrabold">Foot Aid Leyman</span>
+            <span className="text-xl font-extrabold">Foot Aid</span>
           </div>
           <h1 className="text-3xl font-extrabold text-ink">Admin Login</h1>
           <p className="mt-2 text-muted">Sign in to manage your website.</p>

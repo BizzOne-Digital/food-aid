@@ -7,7 +7,6 @@ import {
   defaultHome,
   defaultServices,
   defaultSettings,
-  defaultTestimonials,
   type AboutContent,
   type HomeContent,
   type ServiceData,
@@ -70,11 +69,11 @@ export const getActiveServices = cache(async (): Promise<ServiceData[]> =>
 export const getPublishedTestimonials = cache(async (): Promise<TestimonialData[]> =>
   safe(
     async () => {
+      // Only genuine, published reviews are shown. Never fall back to sample reviews.
       const docs = await Testimonial.find({ isPublished: true }).sort({ sortOrder: 1, createdAt: -1 }).lean();
-      const total = await Testimonial.estimatedDocumentCount();
-      return total ? serialize(docs as unknown as TestimonialData[]) : defaultTestimonials;
+      return serialize(docs as unknown as TestimonialData[]);
     },
-    defaultTestimonials,
+    [],
     "testimonials"
   )
 );

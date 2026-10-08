@@ -17,7 +17,7 @@ const SECTIONS: SectionDef[] = [
   },
   {
     title: "Branding",
-    description: "Leave the logo empty to use the built-in Foot Aid Leyman logo.",
+    description: "Leave the logo empty to use the built-in Foot Aid logo.",
     fields: [
       { key: "logoUrl", label: "Logo", type: "image", folder: "misc", hint: "Transparent PNG or WEBP, about 360 x 104px." },
       { key: "faviconUrl", label: "Favicon", type: "image", folder: "misc", hint: "Square PNG, 512 x 512px." },

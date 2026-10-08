@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
@@ -7,7 +8,7 @@ import { getPublishedTestimonials, getSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "Read what seniors and families in Calgary say about Foot Aid Leyman's mobile foot care service.",
+  description: "Read what seniors and families in Calgary say about Foot Aid's mobile foot care service.",
   alternates: { canonical: "/testimonials" },
 };
 
@@ -24,7 +25,15 @@ export default async function TestimonialsPage() {
       <section className="py-14 sm:py-20">
         <div className="container-x">
           {items.length === 0 ? (
-            <p className="text-center text-muted">Testimonials will appear here soon.</p>
+            <div className="mx-auto max-w-xl rounded-2xl bg-soft p-8 text-center sm:p-10">
+              <h2 className="text-xl font-bold text-ink">Client reviews coming soon</h2>
+              <p className="mt-3 leading-relaxed text-muted">
+                We only publish genuine reviews from our clients. Have you received care from us? We would love to hear about your experience.
+              </p>
+              <Link href="/contact?subject=Client%20feedback" className="btn-outline mt-6">
+                Share Your Feedback
+              </Link>
+            </div>
           ) : (
             <ul className="columns-1 gap-6 sm:columns-2 lg:columns-3">
               {items.map((t, i) => (

@@ -1,4 +1,4 @@
-# Foot Aid Leyman — Website + Admin
+# Foot Aid — Website + Admin
 
 Next.js 16 (App Router, TypeScript, Tailwind v4) · MongoDB Atlas (Mongoose) · Serverless-safe image storage in MongoDB.
 
@@ -16,8 +16,8 @@ Fill in `.env.local`:
 | `MONGODB_URI` | MongoDB Atlas > Connect > Drivers. In Atlas Network Access, allow `0.0.0.0/0` for Vercel. |
 | `SESSION_SECRET` | `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` |
 | `ADMIN_EMAIL` | The admin login email |
-| `ADMIN_PASSWORD_HASH` | `npm run hash-password -- "YourStrongPassword"` (wrap the value in single quotes in .env files) |
-| `NEXT_PUBLIC_SITE_URL` | e.g. `https://footaidleyman.ca` (used for canonical URLs, sitemap and schema) |
+| `ADMIN_PASSWORD_HASH` | `npm run hash-password -- "YourStrongPassword"` (the script prints the value with each $ escaped for .env files) |
+| `NEXT_PUBLIC_SITE_URL` | e.g. `https://footaid.ca` (used for canonical URLs, sitemap and schema) |
 
 ```bash
 npm run seed      # services, home/about content, settings, 3 testimonials (add -- --force to reset)

@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { Clock, Mail, Phone, ShieldCheck } from "lucide-react";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { FootIcon } from "@/components/ui/Icon";
-import { getSettings } from "@/lib/content";
+import { getHomeContent, getSettings } from "@/lib/content";
 import { telHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
-    "Request a mobile foot care appointment in Calgary. A nurse visits your home. New clients receive 20% off their first visit and a free foot assessment.",
+    "Book a mobile foot care nurse in Calgary. A nurse visits your home for senior, diabetic and routine foot care. New clients get 20% off their first treatment visit and a free foot assessment.",
   alternates: { canonical: "/booking" },
 };
 
 export default async function BookingPage({ searchParams }: { searchParams: Promise<{ service?: string }> }) {
-  const [{ service }, settings] = await Promise.all([searchParams, getSettings()]);
+  const [{ service }, settings, home] = await Promise.all([searchParams, getSettings(), getHomeContent()]);
   return (
     <section className="bg-soft pb-16 pt-12 sm:pb-24 sm:pt-16">
       <div className="container-x">
@@ -35,11 +35,12 @@ export default async function BookingPage({ searchParams }: { searchParams: Prom
               <div className="rounded-2xl bg-gradient-to-br from-brand to-[#b8070f] p-7 text-white shadow-card">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/85">New Clients</p>
                 <p className="mt-2 text-3xl font-extrabold">{settings.offerPercentage} OFF</p>
-                <p className="text-lg">your first visit</p>
+                <p className="text-lg">your first treatment visit</p>
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-brand">
                   <FootIcon className="h-7 w-7 shrink-0" aria-hidden />
                   <span className="font-bold">Plus, a Free Foot Assessment!</span>
                 </div>
+                {home.offerTerms && <p className="mt-4 text-xs leading-relaxed text-white/80">{home.offerTerms}</p>}
               </div>
             )}
             <div className="card p-7">
@@ -48,7 +49,7 @@ export default async function BookingPage({ searchParams }: { searchParams: Prom
                 {[
                   { Icon: Clock, t: "We review your request and contact you, usually within one business day." },
                   { Icon: ShieldCheck, t: "We confirm your visit time, address and any mobility needs." },
-                  { Icon: FootIcon, t: "Your nurse arrives at your home with sterilized, professional equipment." },
+                  { Icon: FootIcon, t: "Your nurse arrives at your home with clean, professional equipment." },
                 ].map(({ Icon: I, t }, i) => (
                   <li key={i} className="flex gap-3">
                     <I className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden />

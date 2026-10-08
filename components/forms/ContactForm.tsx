@@ -12,7 +12,7 @@ import { Field, fieldA11y, applyServerErrors } from "./Field";
 type In = z.input<typeof contactSchema>;
 type Out = z.output<typeof contactSchema>;
 
-export function ContactForm() {
+export function ContactForm({ defaultSubject = "" }: { defaultSubject?: string }) {
   const [sent, setSent] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const {
@@ -21,7 +21,11 @@ export function ContactForm() {
     reset,
     setError,
     formState: { errors, isSubmitting },
-  } = useForm<In, unknown, Out>({ resolver: zodResolver(contactSchema), mode: "onTouched" });
+  } = useForm<In, unknown, Out>({
+    resolver: zodResolver(contactSchema),
+    mode: "onTouched",
+    defaultValues: { subject: defaultSubject.slice(0, 150) },
+  });
 
   const onSubmit = async (values: Out) => {
     setServerError(null);

@@ -4,7 +4,7 @@ import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { PromoBanner } from "@/components/home/PromoBanner";
 import { TestimonialsPreview } from "@/components/home/TestimonialsPreview";
-import { FaqSection, HowItWorks, SafetySection, SignsSection, TrustStrip } from "@/components/home/HomeSections";
+import { FaqSection, FacilitiesSection, HowItWorks, SafetySection, SignsSection, TrustStrip } from "@/components/home/HomeSections";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getActiveServices, getHomeContent, getPublishedTestimonials, getSettings } from "@/lib/content";
@@ -48,6 +48,7 @@ export default async function HomePage() {
       {c.signs.length > 0 && <SignsSection c={c} />}
       {settings.offerEnabled && <PromoBanner c={{ ...c, offerPercentage: settings.offerPercentage }} />}
       {c.safetyPoints.length > 0 && <SafetySection c={c} />}
+      {c.facilitiesPoints.length > 0 && <FacilitiesSection c={c} />}
       {testimonials.length > 0 && (
         <TestimonialsPreview eyebrow={c.testimonialsEyebrow} title={c.testimonialsTitle} items={testimonials} />
       )}

@@ -5,11 +5,13 @@ export function CtaBand({
   title,
   text,
   label = "Book an Appointment",
+  href = "/booking",
   phone,
 }: {
   title: string;
   text: string;
   label?: string;
+  href?: string;
   phone?: string;
 }) {
   return (
@@ -21,7 +23,7 @@ export function CtaBand({
             <p className="mt-3 text-lg text-white/85">{text}</p>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-0 lg:shrink-0">
-            <Link href="/booking" className="btn bg-white text-brand hover:bg-brand-50">
+            <Link href={href} className="btn bg-white text-brand hover:bg-brand-50">
               {label} <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
             {phone && (

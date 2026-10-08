@@ -6,12 +6,12 @@ import { telHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Foot Aid Leyman for mobile foot care in Calgary and surrounding areas. Call, email or send us a message.",
+  description: "Contact Foot Aid for mobile foot care in Calgary and surrounding areas. Call, email or send us a message.",
   alternates: { canonical: "/contact" },
 };
 
-export default async function ContactPage() {
-  const [settings, about] = await Promise.all([getSettings(), getAboutContent()]);
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ subject?: string }> }) {
+  const [{ subject }, settings, about] = await Promise.all([searchParams, getSettings(), getAboutContent()]);
   const items = [
     { Icon: Mail, label: "Email", value: settings.email, href: `mailto:${settings.email}` },
     { Icon: Phone, label: "Phone", value: settings.phone, href: telHref(settings.phone) },
@@ -53,7 +53,7 @@ export default async function ContactPage() {
                 </li>
               ))}
             </ul>
-            <ContactForm />
+            <ContactForm defaultSubject={typeof subject === "string" ? subject : ""} />
           </div>
         </div>
       </section>

@@ -47,6 +47,7 @@ export type HomeContent = {
   offerDescription: string;
   offerPillLine1: string;
   offerPillLine2: string;
+  offerTerms: string;
   promoImage: string;
   testimonialsEyebrow: string;
   testimonialsTitle: string;
@@ -68,6 +69,12 @@ export type HomeContent = {
   safetyText: string;
   safetyImage: string;
   safetyPoints: string[];
+  facilitiesEyebrow: string;
+  facilitiesTitle: string;
+  facilitiesText: string;
+  facilitiesImage: string;
+  facilitiesPoints: string[];
+  facilitiesCtaLabel: string;
   faqEyebrow: string;
   faqTitle: string;
   faqs: FaqItem[];
@@ -79,7 +86,7 @@ export type StepItem = { title: string; text: string };
 export type FaqItem = { question: string; answer: string };
 
 export const defaultHome: HomeContent = {
-  heroEyebrow: "Mobile Foot Care Nurse",
+  heroEyebrow: "Mobile Foot Care Nurse in Calgary",
   heroTitleLine1: "Compassionate",
   heroHighlight: "Foot Care",
   heroTitleAfter: "at Home",
@@ -97,16 +104,16 @@ export const defaultHome: HomeContent = {
     { icon: "Nurse", title: "Licensed Nurse", subtitle: "Advanced Foot Care" },
     { icon: "Heart", title: "Focused on", subtitle: "Seniors & Mobility" },
   ],
-  servicesEyebrow: "Professional Foot Care",
+  servicesEyebrow: "In-Home Foot Care in Calgary",
   servicesTitle: "Our Services",
   servicesDescription:
-    "Comprehensive foot care services provided at your home by a qualified nurse, designed for seniors and individuals with mobility issues.",
+    "Senior foot care, diabetic foot care, nail trimming and treatment for corns, calluses and problem nails, provided at your home by a foot care nurse.",
   servicesHighlightLine1: "Free Foot Assessment",
-  servicesHighlightLine2: "with Every Visit",
-  aboutEyebrow: "About Foot Aid Leyman",
+  servicesHighlightLine2: "for New Clients",
+  aboutEyebrow: "About Foot Aid",
   aboutTitle: "Caring for Your Feet,\nWhere You Feel Most Comfortable",
   aboutText:
-    "Foot Aid Leyman is a mobile nurse providing advanced foot care services for immobile seniors and individuals with mobility challenges. Professional, compassionate care is delivered directly to clients throughout Calgary and surrounding areas.",
+    "Foot Aid is a mobile foot care nurse service for seniors, homebound clients and individuals with mobility challenges. Professional, compassionate care is delivered directly to clients throughout Calgary and surrounding areas.",
   aboutImage: IMAGES.aboutPreview,
   aboutOverlay: "Bringing\nProfessional\nFoot Care\nto You",
   aboutFeatures: [
@@ -117,9 +124,10 @@ export const defaultHome: HomeContent = {
   offerKicker: "Join Us Today",
   offerTitle: "Get {percent} OFF",
   offerPercentage: "20%",
-  offerDescription: "on Your First Visit",
+  offerDescription: "Your First Treatment Visit",
   offerPillLine1: "Plus, a",
   offerPillLine2: "Free Foot Assessment!",
+  offerTerms: "New clients only. 20% off the treatment portion of your first home visit. One per client; cannot be combined with other offers.",
   promoImage: IMAGES.promo,
   testimonialsEyebrow: "What Our Clients Say",
   testimonialsTitle: "Testimonials",
@@ -128,8 +136,8 @@ export const defaultHome: HomeContent = {
   footerCtaLabel: "Book Now",
   trustItems: [
     { icon: "Nurse", title: "Nurse-Led Care", subtitle: "Advanced foot care training" },
-    { icon: "ShieldCheck", title: "Sterilized Instruments", subtitle: "Medical-grade hygiene" },
-    { icon: "ClipboardCheck", title: "Free Assessment", subtitle: "With every new client" },
+    { icon: "ShieldCheck", title: "Hygienic Practices", subtitle: "Clean instruments every visit" },
+    { icon: "ClipboardCheck", title: "Free Assessment", subtitle: "For new clients" },
     { icon: "MapPin", title: "Calgary & Area", subtitle: "We come to your home" },
   ],
   stepsEyebrow: "How It Works",
@@ -138,7 +146,7 @@ export const defaultHome: HomeContent = {
   steps: [
     { title: "Request a Visit", text: "Book online or call us with your preferred date, time and address." },
     { title: "We Confirm", text: "We contact you to confirm the visit and note any mobility or health needs." },
-    { title: "Free Assessment", text: "Your nurse checks your feet, skin, nails and circulation, and explains the plan." },
+    { title: "Assessment", text: "Your nurse checks your feet, skin, nails and circulation, and explains the plan. Free for new clients." },
     { title: "Gentle Treatment", text: "Care is completed at home, with simple tips to keep your feet healthy." },
   ],
   signsEyebrow: "When to Book",
@@ -154,28 +162,49 @@ export const defaultHome: HomeContent = {
     "Discomfort when walking or wearing shoes",
   ],
   signsNote: "If you have an open wound, signs of infection or sudden pain, please contact your doctor first.",
-  safetyEyebrow: "Your Safety Comes First",
-  safetyTitle: "Clinic-Level Hygiene, In Your Living Room",
+  safetyEyebrow: "Hygiene & Safety",
+  safetyTitle: "Careful, Hygienic Care at Home",
   safetyText:
-    "Every visit follows strict infection-control practices so you receive the same standard of care you would expect in a clinic, without leaving home.",
+    "We follow infection-prevention practices at every visit and are always happy to explain how our instruments are cleaned and prepared.",
   safetyImage: "/images/img1.png",
   safetyPoints: [
-    "Instruments are cleaned and sterilized before every visit",
-    "Single-use files, gloves and supplies",
-    "Careful review of your health history and medications",
-    "Extra caution for clients with diabetes or circulation concerns",
+    "Clean instruments prepared for each client",
+    "Disposable gloves and single-use supplies where appropriate",
+    "Review of your health history and medications",
+    "Extra care for clients with diabetes or circulation concerns",
     "Clear notes and advice after every appointment",
   ],
+  facilitiesEyebrow: "For Retirement Homes & Care Facilities",
+  facilitiesTitle: "Foot Care Partnerships for Care Facilities",
+  facilitiesText:
+    "We work with retirement homes, assisted living residences and long-term care facilities across Calgary to provide regular, scheduled foot care for residents, on site.",
+  facilitiesImage: "/images/img2.png",
+  facilitiesPoints: [
+    "Scheduled on-site visits for multiple residents",
+    "Routine nail trimming, corn and callus care",
+    "Diabetic and high-risk foot care",
+    "Clear care notes for staff and families",
+    "Flexible scheduling around your facility's routine",
+  ],
+  facilitiesCtaLabel: "Discuss a Partnership",
   faqEyebrow: "Questions & Answers",
   faqTitle: "Frequently Asked Questions",
   faqs: [
     {
-      question: "Which areas do you serve?",
-      answer: "We visit clients throughout Calgary and surrounding communities. Contact us if you are unsure whether we reach your area.",
+      question: "Is there a mobile foot care nurse near me in Calgary?",
+      answer: "Yes. Foot Aid visits clients at home throughout Calgary and surrounding communities. Contact us if you are unsure whether we reach your area.",
     },
     {
       question: "Is the foot assessment really free?",
-      answer: "Yes. Every new client receives a free foot assessment so we can understand your needs before any treatment.",
+      answer: "Yes, for new clients. Your first visit includes a free foot assessment so we can understand your needs before any treatment.",
+    },
+    {
+      question: "Do you provide diabetic foot care?",
+      answer: "Yes. We provide diabetic foot care at home, including nail and skin care and regular foot checks. We will refer you to your doctor if we find anything that needs medical attention.",
+    },
+    {
+      question: "What does the 20% off offer include?",
+      answer: "New clients receive 20% off the treatment portion of their first home visit. The offer is one per client and cannot be combined with other offers.",
     },
     {
       question: "How long does a home visit take?",
@@ -195,7 +224,7 @@ export const defaultHome: HomeContent = {
     },
   ],
   finalCtaTitle: "Give Your Feet the Care They Deserve",
-  finalCtaText: "Book your home visit today. New clients get 20% off their first visit, plus a free foot assessment.",
+  finalCtaText: "Book your home visit today. New clients get 20% off their first treatment visit, plus a free foot assessment.",
 };
 
 export type AboutSection = { title: string; body: string; image: string };
@@ -223,15 +252,15 @@ export type AboutContent = {
 };
 
 export const defaultAbout: AboutContent = {
-  eyebrow: "About Foot Aid Leyman",
+  eyebrow: "About Foot Aid",
   title: "Professional Foot Care,\nDelivered to Your Home",
   intro:
-    "Foot Aid Leyman provides compassionate mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
+    "Foot Aid provides compassionate mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
   heroImage: "/images/img2.png",
   story: {
     title: "Our Story",
     body:
-      "Foot Aid Leyman was created to close a simple but important gap: many seniors and people with limited mobility cannot easily travel to a clinic for regular foot care. Healthy feet are essential for comfort, balance and independence, so we bring professional nursing foot care to the people who need it most, right where they live.",
+      "Foot Aid was created to close a simple but important gap: many seniors and people with limited mobility cannot easily travel to a clinic for regular foot care. Healthy feet are essential for comfort, balance and independence, so we bring professional nursing foot care to the people who need it most, right where they live.",
     image: IMAGES.nurseChat,
   },
   whyMobile: {
@@ -243,7 +272,7 @@ export const defaultAbout: AboutContent = {
   approach: {
     title: "Our Approach",
     body:
-      "Every visit begins with listening. We complete a careful foot assessment, explain what we see in plain language, and agree on a care plan that suits your comfort and health needs. Treatments are gentle, hygienic and unhurried, using sterilized instruments and professional techniques.",
+      "Every visit begins with listening. We complete a careful foot assessment, explain what we see in plain language, and agree on a care plan that suits your comfort and health needs. Treatments are gentle, hygienic and unhurried, using clean, properly prepared instruments and professional techniques.",
     image: "/images/img6.png",
   },
   whoWeHelpTitle: "Who We Help",
@@ -258,7 +287,7 @@ export const defaultAbout: AboutContent = {
   whyChooseTitle: "Why Choose Us",
   whyChoose: [
     { icon: "Home", title: "Convenient Home Visits", text: "Care at your door, scheduled around you." },
-    { icon: "Nurse", title: "Professional Advanced Care", text: "Nurse-led treatment with sterilized tools." },
+    { icon: "Nurse", title: "Professional Advanced Care", text: "Nurse-led treatment with properly prepared tools." },
     { icon: "Users", title: "Senior-Focused Service", text: "Patient, gentle care designed for seniors." },
     { icon: "Heart", title: "Compassionate Approach", text: "Respectful, reassuring and unhurried visits." },
     { icon: "ClipboardCheck", title: "Personalized Assessment", text: "A care plan based on your feet and needs." },
@@ -269,7 +298,7 @@ export const defaultAbout: AboutContent = {
     "We serve clients throughout Calgary and surrounding communities. Not sure if we reach you? Contact us and we will confirm.",
   serviceAreas: ["Calgary", "Airdrie", "Chestermere", "Cochrane", "Okotoks", "Strathmore"],
   ctaTitle: "Ready to Book Your Home Visit?",
-  ctaText: "Book your mobile foot care appointment today. New clients receive 20% off their first visit.",
+  ctaText: "Book your mobile foot care appointment today. New clients receive 20% off their first treatment visit, plus a free foot assessment.",
   ctaLabel: "Book an Appointment",
 };
 
@@ -295,23 +324,23 @@ export type SiteSettingsData = {
 };
 
 export const defaultSettings: SiteSettingsData = {
-  businessName: "Foot Aid Leyman",
+  businessName: "Foot Aid",
   tagline: "Mobile Foot Care Nurse",
   email: "leymn.ali@gmail.com",
-  phone: "+1 647-784-3011",
+  phone: "+1 587-707-1099",
   address: "Calgary, Alberta",
   serviceArea: "& Surrounding Areas",
   footerDescription:
     "Professional mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
-  logoUrl: "",
+  logoUrl: "/images/logo.png",
   faviconUrl: "",
   social: { facebook: "", instagram: "", linkedin: "", google: "" },
   offerEnabled: true,
   offerPercentage: "20%",
-  offerText: "Join us today and get 20% OFF your first visit, plus a Free Foot Assessment.",
-  seoTitle: "Foot Aid Leyman | Mobile Foot Care Nurse in Calgary",
+  offerText: "New clients: 20% OFF your first treatment visit, plus a Free Foot Assessment.",
+  seoTitle: "Mobile Foot Care Nurse in Calgary | Foot Aid",
   seoDescription:
-    "Professional mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas. Book compassionate in-home foot care with Foot Aid Leyman.",
+    "Foot Aid is a mobile foot care nurse in Calgary offering in-home senior foot care, diabetic foot care, nail trimming, and corn and callus care. Free foot assessment for new clients.",
   seoImage: IMAGES.hero,
 };
 
@@ -333,11 +362,55 @@ export const defaultServices: ServiceData[] = [
     slug: "free-foot-assessment",
     imageUrl: "/images/service1.png",
     iconName: "ClipboardCheck",
-    shortDescription: "A comprehensive evaluation of your foot health and care needs.",
+    shortDescription: "A full check of your foot health and care needs. Free for new clients.",
     fullDescription:
       "Every new client starts with a complete, no-cost assessment. We check skin, nails, circulation and sensation, review any concerns or medical conditions, and recommend a care plan that fits your needs. You get clear answers before any treatment begins.",
     isActive: true,
     sortOrder: 1,
+  },
+  {
+    title: "Routine Foot & Nail Care",
+    slug: "routine-foot-nail-care",
+    imageUrl: u("1675159364623-6938e10245f0", 900),
+    iconName: "Scissors",
+    shortDescription: "Regular nail trimming, filing and skin care to keep feet comfortable.",
+    fullDescription:
+      "Regular foot care keeps nails at a safe length and skin healthy. Each visit includes nail trimming and filing, gentle skin care and a quick check for any changes, so small problems are caught early. Ideal for clients who can no longer reach or trim their own nails.",
+    isActive: true,
+    sortOrder: 2,
+  },
+  {
+    title: "Diabetic Foot Care",
+    slug: "diabetic-foot-care",
+    imageUrl: "/images/img3.png",
+    iconName: "ShieldCheck",
+    shortDescription: "Careful nail and skin care for clients living with diabetes.",
+    fullDescription:
+      "Diabetes can reduce sensation and circulation in the feet, so even small cuts or pressure areas need attention. We provide careful nail and skin care, check for early warning signs and share daily foot care tips. If we notice anything that needs medical attention, we will advise you to contact your doctor.",
+    isActive: true,
+    sortOrder: 3,
+  },
+  {
+    title: "Senior Foot Care",
+    slug: "senior-foot-care",
+    imageUrl: "/images/img6.png",
+    iconName: "Users",
+    shortDescription: "Gentle, patient foot care for seniors at home or in residence.",
+    fullDescription:
+      "As we age, nails thicken, skin becomes more fragile and reaching our feet gets harder. Our senior foot care visits combine nail care, corn and callus care and a foot health check, delivered with patience and respect in the comfort of home.",
+    isActive: true,
+    sortOrder: 4,
+  },
+  {
+    title: "Thickened Nail Care",
+    slug: "thickened-nail-care",
+    imageUrl: u("1633526543913-d30e3c230d1f", 900),
+    iconName: "Layers",
+    shortDescription: "Safe reduction of thick, hard or discoloured toenails.",
+    fullDescription:
+      "Thick toenails can be painful, press against shoes and be very hard to cut at home. We safely file and reduce the nail thickness to relieve pressure and make nails easier to manage between visits.",
+    isActive: true,
+    sortOrder: 5,
   },
   {
     title: "Ingrown Nail Care",
@@ -346,9 +419,9 @@ export const defaultServices: ServiceData[] = [
     iconName: "Scissors",
     shortDescription: "Safe and professional care for uncomfortable or ingrown nails.",
     fullDescription:
-      "Ingrown nails can be painful and may lead to infection if left untreated. We gently trim and relieve the affected nail edge using sterile instruments, and share simple tips to help prevent it from coming back.",
+      "Ingrown nails can be painful and may lead to infection if left untreated. We gently trim and relieve the affected nail edge using clean instruments, and share simple tips to help prevent it from coming back.",
     isActive: true,
-    sortOrder: 2,
+    sortOrder: 6,
   },
   {
     title: "Callus Care",
@@ -359,7 +432,7 @@ export const defaultServices: ServiceData[] = [
     fullDescription:
       "Calluses build up over pressure points and can make walking uncomfortable. We safely reduce thickened skin, smooth the area and advise on footwear and moisturizing to keep your feet comfortable between visits.",
     isActive: true,
-    sortOrder: 3,
+    sortOrder: 7,
   },
   {
     title: "Corn Care",
@@ -370,7 +443,7 @@ export const defaultServices: ServiceData[] = [
     fullDescription:
       "Corns are small areas of hardened skin that can press on nerves and cause sharp pain. We carefully reduce the corn, relieve the pressure and recommend padding or footwear changes to support lasting comfort.",
     isActive: true,
-    sortOrder: 4,
+    sortOrder: 8,
   },
   {
     title: "Involuted Nail Care",
@@ -381,7 +454,7 @@ export const defaultServices: ServiceData[] = [
     fullDescription:
       "Involuted nails curve inward and can pinch the skin along the nail edges. We thin, trim and file the nail to relieve pressure, and assess whether a correction option such as Onyfix may help.",
     isActive: true,
-    sortOrder: 5,
+    sortOrder: 9,
   },
   {
     title: "Onyfix Correction",
@@ -392,7 +465,7 @@ export const defaultServices: ServiceData[] = [
     fullDescription:
       "Onyfix is a gentle, non-invasive nail correction system. A thin composite brace is applied to the nail surface to guide it to grow flatter over time. It is painless, requires no injections and lets you continue normal daily activities.",
     isActive: true,
-    sortOrder: 6,
+    sortOrder: 10,
   },
 ];
 
@@ -407,33 +480,36 @@ export type TestimonialData = {
   sortOrder: number;
 };
 
+/**
+ * Sample reviews for layout only. They are seeded UNPUBLISHED so nothing fake appears on the site.
+ * Replace them with genuine client reviews (with permission) in Admin > Testimonials, then publish.
+ */
 export const defaultTestimonials: TestimonialData[] = [
   {
-    clientName: "Margaret T.",
+    clientName: "Sample Review",
     location: "Calgary, AB",
     rating: 5,
-    review:
-      "Leyman is very professional and caring. The service made my mother feel comfortable and the home visit was extremely convenient.",
+    review: "Very professional and caring. The home visit was convenient and my mother felt completely comfortable.",
     image: "",
-    isPublished: true,
+    isPublished: false,
     sortOrder: 1,
   },
   {
-    clientName: "James R.",
+    clientName: "Sample Review",
     location: "Calgary, AB",
     rating: 5,
-    review: "Highly recommended Foot Aid Leyman. Convenient, knowledgeable and compassionate care.",
+    review: "Highly recommend Foot Aid. Convenient, knowledgeable and compassionate care.",
     image: "",
-    isPublished: true,
+    isPublished: false,
     sortOrder: 2,
   },
   {
-    clientName: "Linda K.",
+    clientName: "Sample Review",
     location: "Calgary, AB",
     rating: 5,
-    review: "The free assessment was very helpful. The service was gentle, professional and reassuring.",
+    review: "The free assessment was very helpful. The care was gentle, professional and reassuring.",
     image: "",
-    isPublished: true,
+    isPublished: false,
     sortOrder: 3,
   },
 ];

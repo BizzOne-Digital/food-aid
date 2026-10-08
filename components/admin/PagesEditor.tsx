@@ -57,6 +57,7 @@ const HOME: SectionDef[] = [
       { key: "offerDescription", label: "Offer Description", type: "text" },
       { key: "offerPillLine1", label: "Pill Line 1", type: "text" },
       { key: "offerPillLine2", label: "Pill Line 2", type: "text" },
+      { key: "offerTerms", label: "Offer Terms (small print)", type: "textarea", rows: 2 },
       { key: "promoImage", label: "Promo Background Image", type: "image" },
     ],
   },
@@ -99,6 +100,17 @@ const HOME: SectionDef[] = [
       { key: "safetyText", label: "Text", type: "textarea" },
       { key: "safetyImage", label: "Image", type: "image" },
       { key: "safetyPoints", label: "Checklist", type: "stringList" },
+    ],
+  },
+  {
+    title: "Retirement Homes & Care Facilities",
+    fields: [
+      { key: "facilitiesEyebrow", label: "Eyebrow", type: "text" },
+      { key: "facilitiesTitle", label: "Heading", type: "text" },
+      { key: "facilitiesText", label: "Text", type: "textarea" },
+      { key: "facilitiesImage", label: "Image", type: "image" },
+      { key: "facilitiesPoints", label: "Points", type: "stringList" },
+      { key: "facilitiesCtaLabel", label: "Button Label", type: "text" },
     ],
   },
   {

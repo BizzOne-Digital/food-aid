@@ -13,9 +13,9 @@ import { IMAGES } from "@/lib/defaults";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Foot Care Services in Calgary: Senior, Diabetic & Nail Care",
   description:
-    "In-home foot care services in Calgary: free foot assessment, ingrown nail care, callus and corn care, involuted nail care and Onyfix nail correction.",
+    "In-home foot care services in Calgary from a mobile foot care nurse: senior foot care, diabetic foot care, nail trimming, thickened and ingrown nails, corns, calluses and Onyfix. Free assessment for new clients.",
   alternates: { canonical: "/services" },
 };
 
@@ -46,7 +46,7 @@ export default async function ServicesPage() {
         eyebrow="Our Services"
         title={"Advanced Foot Care\nin the Comfort of Your Home"}
         highlight="Advanced Foot Care"
-        intro="Nurse-led foot care for seniors and individuals with mobility challenges. Every new client starts with a free foot assessment."
+        intro="Mobile foot care nursing in Calgary for seniors, people living with diabetes and anyone who finds it hard to care for their own feet. New clients start with a free foot assessment."
         image={IMAGES.footHold}
         imageAlt="Nurse holding a client's foot during an assessment"
       />
@@ -101,7 +101,7 @@ export default async function ServicesPage() {
               <p className="text-[13px] font-bold leading-snug text-ink">
                 Free Foot Assessment
                 <br />
-                with Every Visit
+                for New Clients
               </p>
             </div>
           </Reveal>

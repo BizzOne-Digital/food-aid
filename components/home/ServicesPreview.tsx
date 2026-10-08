@@ -25,7 +25,7 @@ export function ServicesPreview({ c, services }: { c: HomeContent; services: Ser
           </div>
         </Reveal>
 
-        <ul className="mt-9 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-3 xl:gap-4">
+        <ul className="mt-9 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-4">
           {services.map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 60}>
               <ServiceCard s={s} />

@@ -43,7 +43,7 @@ export function Header({ logoUrl, businessName, phone }: { logoUrl?: string; bus
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-4 focus:py-2">
         Skip to content
       </a>
-      <div className="container-x flex h-[72px] items-center justify-between gap-6 lg:h-[66px]">
+      <div className="container-x flex h-[76px] items-center justify-between gap-6 lg:h-[78px]">
         <Logo logoUrl={logoUrl} name={businessName} />
 
         <nav aria-label="Main" className="hidden lg:block">

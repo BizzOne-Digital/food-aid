@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/Icon";
-import { NAV_LINKS, telHref } from "@/lib/site";
+import { FOOTER_EXTRA_LINKS, NAV_LINKS, telHref } from "@/lib/site";
 import type { HomeContent, SiteSettingsData } from "@/lib/defaults";
 
 export function Footer({ settings, home }: { settings: SiteSettingsData; home: HomeContent }) {
@@ -40,7 +40,7 @@ export function Footer({ settings, home }: { settings: SiteSettingsData; home: H
         <nav aria-label="Footer">
           <h2 className="text-[15px] font-bold text-ink">Quick Links</h2>
           <ul className="mt-4 space-y-2">
-            {NAV_LINKS.map((l) => (
+            {[...NAV_LINKS, ...FOOTER_EXTRA_LINKS].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="text-[13.5px] text-ink/80 transition hover:text-brand">
                   {l.label}
