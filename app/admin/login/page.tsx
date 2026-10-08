@@ -18,7 +18,7 @@ export default async function AdminLoginPage({ searchParams }: { searchParams: P
           <p className="text-4xl font-extrabold leading-tight">
             Manage bookings,
             <br />
-            content and clients.
+            content and clients..
           </p>
           <p className="mt-4 max-w-sm text-white/75">Secure admin area. Authorized staff only.</p>
         </div>
