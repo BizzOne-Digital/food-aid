@@ -10,6 +10,8 @@ export function shapeLike<T>(template: T, input: unknown, key = ""): T {
     if (typeof input !== "string") return template;
     const v = input.slice(0, 5000);
     if (/image|logo|favicon|avatar/i.test(key) && !imageUrl.safeParse(v).success) return template;
+    // Videos: a file in /public/videos or a full https link to an MP4/WebM.
+    if (/video/i.test(key) && v !== "" && !/^(\/videos\/[\w.-]+\.(mp4|webm)|https:\/\/\S+\.(mp4|webm))$/i.test(v.trim())) return template;
     return v as T;
   }
   if (typeof template === "boolean") return (typeof input === "boolean" ? input : template) as T;

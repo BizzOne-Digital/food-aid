@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import type { z } from "zod";
 import { toast } from "sonner";
 import { CircleCheck, LoaderCircle, Send } from "lucide-react";
-import { bookingSchema, SERVICE_OPTIONS } from "@/lib/validations";
+import { bookingSchema, LOCATION_OPTIONS, SERVICE_OPTIONS } from "@/lib/validations";
 import { Field, fieldA11y, applyServerErrors } from "./Field";
 
 type In = z.input<typeof bookingSchema>;
@@ -124,7 +124,17 @@ export function BookingForm({ defaultService }: { defaultService?: string }) {
             ))}
           </select>
         </Field>
-        <Field id="address" label="Address" required error={errors.address?.message} className="sm:col-span-2">
+        <Field id="locationType" label="Visit Location" required error={errors.locationType?.message} className="sm:col-span-2">
+          <select {...register("locationType")} {...fieldA11y("locationType", errors.locationType?.message)} className="field" defaultValue="">
+            <option value="" disabled>
+              Where should we visit you?
+            </option>
+            {LOCATION_OPTIONS.map((l) => (
+              <option key={l}>{l}</option>
+            ))}
+          </select>
+        </Field>
+        <Field id="address" label="Address" hint="For a facility or hospital, include the name, unit or room number." required error={errors.address?.message} className="sm:col-span-2">
           <input {...register("address")} {...fieldA11y("address", errors.address?.message)} autoComplete="street-address" className="field" />
         </Field>
         <Field id="city" label="City" required error={errors.city?.message}>

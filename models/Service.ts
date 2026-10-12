@@ -5,6 +5,8 @@ const ServiceSchema = new Schema(
     title: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     imageUrl: { type: String, default: "" },
+    beforeImage: { type: String, default: "" },
+    afterImage: { type: String, default: "" },
     iconName: { type: String, default: "Footprints" },
     shortDescription: { type: String, default: "" },
     fullDescription: { type: String, default: "" },

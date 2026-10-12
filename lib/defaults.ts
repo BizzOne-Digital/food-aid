@@ -80,6 +80,19 @@ export type HomeContent = {
   faqs: FaqItem[];
   finalCtaTitle: string;
   finalCtaText: string;
+  benefitsEyebrow: string;
+  benefitsTitle: string;
+  benefitsText: string;
+  benefitsImage: string;
+  benefitsVideo: string;
+  benefits: string[];
+  driveEyebrow: string;
+  driveTitle: string;
+  driveHighlight: string;
+  driveSubtitle: string;
+  driveAreas: string;
+  driveCtaKicker: string;
+  driveCtaLabel: string;
 };
 
 export type StepItem = { title: string; text: string };
@@ -87,11 +100,11 @@ export type FaqItem = { question: string; answer: string };
 
 export const defaultHome: HomeContent = {
   heroEyebrow: "Mobile Foot Care Nurse in Calgary",
-  heroTitleLine1: "Compassionate",
-  heroHighlight: "Foot Care",
-  heroTitleAfter: "at Home",
+  heroTitleLine1: "Healthy, Pain-Free Feet.",
+  heroHighlight: "We Come to You.",
+  heroTitleAfter: "",
   heroDescription:
-    "Professional mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
+    "Safe, professional foot care from an Advanced Foot Care Nurse, at your home, care facility or hospital in Calgary and surrounding areas.",
   heroImage: IMAGES.hero,
   heroDecorLine1: "Healthy Feet",
   heroDecorLine2: "Happier Days!",
@@ -100,26 +113,26 @@ export const defaultHome: HomeContent = {
   heroSecondaryLabel: "Learn More",
   heroSecondaryHref: "/about",
   heroFeatures: [
-    { icon: "Home", title: "At Your Home", subtitle: "Comfort & Convenience" },
-    { icon: "Nurse", title: "Licensed Nurse", subtitle: "Advanced Foot Care" },
-    { icon: "Heart", title: "Focused on", subtitle: "Seniors & Mobility" },
+    { icon: "Home", title: "Mobile Service", subtitle: "Home, facility or hospital" },
+    { icon: "Nurse", title: "Advanced Foot Care", subtitle: "Nurse-led treatment" },
+    { icon: "Users", title: "For All Ages", subtitle: "Every foot care need" },
   ],
-  servicesEyebrow: "In-Home Foot Care in Calgary",
+  servicesEyebrow: "Mobile Foot Care in Calgary",
   servicesTitle: "Our Services",
   servicesDescription:
-    "Senior foot care, diabetic foot care, nail trimming and treatment for corns, calluses and problem nails, provided at your home by a foot care nurse.",
+    "Diabetic foot care, nail trimming and treatment for corns, calluses and problem nails for people of all ages, provided on site at your home, care facility or hospital.",
   servicesHighlightLine1: "Free Foot Assessment",
   servicesHighlightLine2: "for New Clients",
   aboutEyebrow: "About Foot Aid",
   aboutTitle: "Caring for Your Feet,\nWhere You Feel Most Comfortable",
   aboutText:
-    "Foot Aid is a mobile foot care nurse service for seniors, homebound clients and individuals with mobility challenges. Professional, compassionate care is delivered directly to clients throughout Calgary and surrounding areas.",
+    "Foot Aid is a mobile-only foot care nurse service. We do not operate from a clinic. Instead, we bring professional foot care to you, at home, in care facilities and in hospitals throughout Calgary and surrounding areas, for clients of all ages and needs.",
   aboutImage: IMAGES.aboutPreview,
   aboutOverlay: "Bringing\nProfessional\nFoot Care\nto You",
   aboutFeatures: [
     { icon: "Home", title: "Mobile Service", subtitle: "We come to you" },
     { icon: "Nurse", title: "Experienced Nurse", subtitle: "Advanced foot care" },
-    { icon: "MapPin", title: "Calgary & Surrounding", subtitle: "Areas we serve" },
+    { icon: "MapPin", title: "Homes & Hospitals", subtitle: "Calgary & area" },
   ],
   offerKicker: "Join Us Today",
   offerTitle: "Get {percent} OFF",
@@ -127,32 +140,32 @@ export const defaultHome: HomeContent = {
   offerDescription: "Your First Treatment Visit",
   offerPillLine1: "Plus, a",
   offerPillLine2: "Free Foot Assessment!",
-  offerTerms: "New clients only. 20% off the treatment portion of your first home visit. One per client; cannot be combined with other offers.",
+  offerTerms: "New clients only. 20% off the treatment portion of your first visit. One per client; cannot be combined with other offers.",
   promoImage: IMAGES.promo,
   testimonialsEyebrow: "What Our Clients Say",
   testimonialsTitle: "Testimonials",
   footerCtaTitle: "Book an Appointment",
-  footerCtaText: "Book your mobile foot care service today and experience professional care at home.",
+  footerCtaText: "Book your mobile foot care visit today. We come to your home, care facility or hospital.",
   footerCtaLabel: "Book Now",
   trustItems: [
     { icon: "Nurse", title: "Nurse-Led Care", subtitle: "Advanced foot care training" },
     { icon: "ShieldCheck", title: "Hygienic Practices", subtitle: "Clean instruments every visit" },
     { icon: "ClipboardCheck", title: "Free Assessment", subtitle: "For new clients" },
-    { icon: "MapPin", title: "Calgary & Area", subtitle: "We come to your home" },
+    { icon: "MapPin", title: "Mobile Only", subtitle: "We come to you" },
   ],
   stepsEyebrow: "How It Works",
   stepsTitle: "Foot Care in 4 Simple Steps",
-  stepsDescription: "No travel, no waiting rooms. Booking a home visit takes only a few minutes.",
+  stepsDescription: "No travel, no waiting rooms. Booking a visit takes only a few minutes.",
   steps: [
-    { title: "Request a Visit", text: "Book online or call us with your preferred date, time and address." },
+    { title: "Request a Visit", text: "Book online or call or text us with your preferred date, time and location." },
     { title: "We Confirm", text: "We contact you to confirm the visit and note any mobility or health needs." },
     { title: "Assessment", text: "Your nurse checks your feet, skin, nails and circulation, and explains the plan. Free for new clients." },
-    { title: "Gentle Treatment", text: "Care is completed at home, with simple tips to keep your feet healthy." },
+    { title: "Gentle Treatment", text: "Care is completed on site, with simple tips to keep your feet healthy." },
   ],
   signsEyebrow: "When to Book",
   signsTitle: "Signs You May Need Professional Foot Care",
   signsDescription:
-    "Foot problems are common with age and often go untreated when reaching your feet becomes difficult. Book a visit if you notice any of these:",
+    "Foot problems can affect anyone and often go untreated. Book a visit if you notice any of these:",
   signs: [
     "Thick, hard or discoloured toenails",
     "Painful, curved or ingrown nails",
@@ -163,7 +176,7 @@ export const defaultHome: HomeContent = {
   ],
   signsNote: "If you have an open wound, signs of infection or sudden pain, please contact your doctor first.",
   safetyEyebrow: "Hygiene & Safety",
-  safetyTitle: "Careful, Hygienic Care at Home",
+  safetyTitle: "Careful, Hygienic Care Wherever You Are",
   safetyText:
     "We follow infection-prevention practices at every visit and are always happy to explain how our instruments are cleaned and prepared.",
   safetyImage: "/images/img1.png",
@@ -174,12 +187,13 @@ export const defaultHome: HomeContent = {
     "Extra care for clients with diabetes or circulation concerns",
     "Clear notes and advice after every appointment",
   ],
-  facilitiesEyebrow: "For Retirement Homes & Care Facilities",
-  facilitiesTitle: "Foot Care Partnerships for Care Facilities",
+  facilitiesEyebrow: "For Hospitals & Care Facilities",
+  facilitiesTitle: "On-Site Foot Care for Hospitals & Care Facilities",
   facilitiesText:
-    "We work with retirement homes, assisted living residences and long-term care facilities across Calgary to provide regular, scheduled foot care for residents, on site.",
+    "We provide on-site foot care in hospitals, retirement homes, assisted living residences and long-term care facilities across Calgary, for individual patients or scheduled visits for multiple residents.",
   facilitiesImage: "/images/img2.png",
   facilitiesPoints: [
+    "Bedside foot care for hospital patients",
     "Scheduled on-site visits for multiple residents",
     "Routine nail trimming, corn and callus care",
     "Diabetic and high-risk foot care",
@@ -192,7 +206,7 @@ export const defaultHome: HomeContent = {
   faqs: [
     {
       question: "Is there a mobile foot care nurse near me in Calgary?",
-      answer: "Yes. Foot Aid visits clients at home throughout Calgary and surrounding communities. Contact us if you are unsure whether we reach your area.",
+      answer: "Yes. Foot Aid is a mobile-only service. We visit clients at home, in care facilities and in hospitals throughout Calgary, Airdrie, Chestermere, Cochrane, Okotoks and surrounding areas.",
     },
     {
       question: "Is the foot assessment really free?",
@@ -200,14 +214,14 @@ export const defaultHome: HomeContent = {
     },
     {
       question: "Do you provide diabetic foot care?",
-      answer: "Yes. We provide diabetic foot care at home, including nail and skin care and regular foot checks. We will refer you to your doctor if we find anything that needs medical attention.",
+      answer: "Yes. We provide diabetic foot care at home, in care facilities and in hospital, including nail and skin care and regular foot checks. We will refer you to your doctor if we find anything that needs medical attention.",
     },
     {
       question: "What does the 20% off offer include?",
-      answer: "New clients receive 20% off the treatment portion of their first home visit. The offer is one per client and cannot be combined with other offers.",
+      answer: "New clients receive 20% off the treatment portion of their first visit. The offer is one per client and cannot be combined with other offers.",
     },
     {
-      question: "How long does a home visit take?",
+      question: "How long does a visit take?",
       answer: "Most visits take 45 to 60 minutes, depending on the care needed. We never rush an appointment.",
     },
     {
@@ -215,16 +229,33 @@ export const defaultHome: HomeContent = {
       answer: "No referral is needed. If we find something that needs medical attention, we will recommend that you see your doctor.",
     },
     {
-      question: "Can you visit retirement homes or care residences?",
-      answer: "Yes. We visit private homes, retirement residences and assisted living facilities.",
+      question: "Do you have a clinic I can visit?",
+      answer: "No. Foot Aid is mobile only. We come to you at home, in a care facility or in hospital.",
+    },
+    {
+      question: "Can you visit hospitals, retirement homes or care residences?",
+      answer: "Yes. We provide on-site care in hospitals, retirement residences, assisted living and long-term care facilities.",
     },
     {
       question: "What do I need to prepare for the visit?",
       answer: "Just a comfortable chair and good lighting. We bring all equipment and supplies with us.",
     },
   ],
+  benefitsEyebrow: "Why Foot Care Matters",
+  benefitsTitle: "The Benefits of Professional Foot Care",
+  benefitsText: "Regular care from a foot care nurse keeps you comfortable, active and confident at every age.",
+  benefitsImage: "https://images.unsplash.com/photo-1545463913-5083aa7359a6?auto=format&fit=crop&w=1200&q=80",
+  benefitsVideo: "/videos/foot-care.mp4",
+  benefits: ["Improves Circulation", "Prevents Injuries", "Enhances Foot Appearance & Confidence", "Aids Relaxation & Mental Health"],
+  driveEyebrow: "Mobile Foot Care Nurse",
+  driveTitle: "No clinic. No waiting room.",
+  driveHighlight: "We come to you.",
+  driveSubtitle: "Safe, professional foot care from an Advanced Foot Care Nurse.",
+  driveAreas: "Serving Calgary, Airdrie, Chestermere, Cochrane, Okotoks and surrounding areas.",
+  driveCtaKicker: "Now Booking",
+  driveCtaLabel: "Book Your Visit",
   finalCtaTitle: "Give Your Feet the Care They Deserve",
-  finalCtaText: "Book your home visit today. New clients get 20% off their first treatment visit, plus a free foot assessment.",
+  finalCtaText: "Book your visit today. New clients get 20% off their first treatment visit, plus a free foot assessment.",
 };
 
 export type AboutSection = { title: string; body: string; image: string };
@@ -255,18 +286,18 @@ export const defaultAbout: AboutContent = {
   eyebrow: "About Foot Aid",
   title: "Professional Foot Care,\nDelivered to Your Home",
   intro:
-    "Foot Aid provides compassionate mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
+    "Foot Aid is a mobile-only foot care nurse service. We bring professional foot care to homes, care facilities and hospitals across Calgary and surrounding areas, for people of all ages.",
   heroImage: "/images/img2.png",
   story: {
     title: "Our Story",
     body:
-      "Foot Aid was created to close a simple but important gap: many seniors and people with limited mobility cannot easily travel to a clinic for regular foot care. Healthy feet are essential for comfort, balance and independence, so we bring professional nursing foot care to the people who need it most, right where they live.",
+      "Foot Aid was created to close a simple but important gap: many people, from busy adults to seniors and hospital patients, cannot easily travel to a clinic for regular foot care. Healthy feet are essential for comfort, balance and independence, so we bring professional nursing foot care directly to you, wherever you are.",
     image: IMAGES.nurseChat,
   },
   whyMobile: {
     title: "Why Mobile Foot Care Matters",
     body:
-      "Untreated nail and skin concerns can lead to pain, infection and a higher risk of falls. For clients who are homebound or find travel difficult, regular care is often delayed. Mobile foot care removes the travel, waiting rooms and stress, so problems are treated early and comfortably at home.",
+      "Untreated nail and skin concerns can lead to pain, infection and a higher risk of falls. When getting to an appointment is difficult, regular care is often delayed. Mobile foot care removes the travel, waiting rooms and stress, so problems are treated early and comfortably, at home, in a care facility or in hospital.",
     image: "/images/img3.png",
   },
   approach: {
@@ -277,18 +308,18 @@ export const defaultAbout: AboutContent = {
   },
   whoWeHelpTitle: "Who We Help",
   whoWeHelp: [
-    "Seniors living at home or in retirement residences",
-    "Individuals with limited mobility or balance concerns",
-    "Homebound clients and those recovering from illness or surgery",
-    "Clients who have difficulty reaching or caring for their own feet",
-    "Families looking for reliable care for a loved one",
+    "Adults of all ages who want professional foot and nail care",
+    "People living with diabetes or circulation concerns",
+    "Seniors at home or in retirement residences",
+    "Hospital patients and those recovering from illness or surgery",
+    "Anyone who finds it difficult to reach or care for their own feet",
   ],
   whoWeHelpImage: "/images/img5.png",
   whyChooseTitle: "Why Choose Us",
   whyChoose: [
-    { icon: "Home", title: "Convenient Home Visits", text: "Care at your door, scheduled around you." },
+    { icon: "Home", title: "Mobile-Only Visits", text: "We come to your home, facility or hospital." },
     { icon: "Nurse", title: "Professional Advanced Care", text: "Nurse-led treatment with properly prepared tools." },
-    { icon: "Users", title: "Senior-Focused Service", text: "Patient, gentle care designed for seniors." },
+    { icon: "Users", title: "Care for All Ages", text: "Gentle, patient care for every foot care need." },
     { icon: "Heart", title: "Compassionate Approach", text: "Respectful, reassuring and unhurried visits." },
     { icon: "ClipboardCheck", title: "Personalized Assessment", text: "A care plan based on your feet and needs." },
     { icon: "MapPin", title: "Calgary & Surrounding Areas", text: "Serving Calgary and nearby communities." },
@@ -297,8 +328,8 @@ export const defaultAbout: AboutContent = {
   serviceAreasText:
     "We serve clients throughout Calgary and surrounding communities. Not sure if we reach you? Contact us and we will confirm.",
   serviceAreas: ["Calgary", "Airdrie", "Chestermere", "Cochrane", "Okotoks", "Strathmore"],
-  ctaTitle: "Ready to Book Your Home Visit?",
-  ctaText: "Book your mobile foot care appointment today. New clients receive 20% off their first treatment visit, plus a free foot assessment.",
+  ctaTitle: "Ready to Book Your Visit?",
+  ctaText: "Book your mobile foot care visit today. New clients receive 20% off their first treatment visit, plus a free foot assessment.",
   ctaLabel: "Book an Appointment",
 };
 
@@ -329,10 +360,10 @@ export const defaultSettings: SiteSettingsData = {
   email: "leymn.ali@gmail.com",
   phone: "+1 587-707-1099",
   address: "Calgary, Alberta",
-  serviceArea: "& Surrounding Areas",
+  serviceArea: "Mobile service: we come to you",
   footerDescription:
-    "Professional mobile foot care for seniors and individuals with mobility challenges in Calgary and surrounding areas.",
-  logoUrl: "/images/logo.png",
+    "Mobile-only foot care nursing for all ages. We come to your home, care facility or hospital in Calgary and surrounding areas.",
+  logoUrl: "",
   faviconUrl: "",
   social: { facebook: "", instagram: "", linkedin: "", google: "" },
   offerEnabled: true,
@@ -340,7 +371,7 @@ export const defaultSettings: SiteSettingsData = {
   offerText: "New clients: 20% OFF your first treatment visit, plus a Free Foot Assessment.",
   seoTitle: "Mobile Foot Care Nurse in Calgary | Foot Aid",
   seoDescription:
-    "Foot Aid is a mobile foot care nurse in Calgary offering in-home senior foot care, diabetic foot care, nail trimming, and corn and callus care. Free foot assessment for new clients.",
+    "Foot Aid is a mobile foot care nurse in Calgary. We come to your home, care facility or hospital for diabetic foot care, nail trimming, senior foot care, and corn and callus care. Free assessment for new clients.",
   seoImage: IMAGES.hero,
 };
 
@@ -349,6 +380,9 @@ export type ServiceData = {
   title: string;
   slug: string;
   imageUrl: string;
+  /** Optional real before/after photos (client results, with consent). */
+  beforeImage?: string;
+  afterImage?: string;
   iconName: string;
   shortDescription: string;
   fullDescription: string;
@@ -375,7 +409,7 @@ export const defaultServices: ServiceData[] = [
     iconName: "Scissors",
     shortDescription: "Regular nail trimming, filing and skin care to keep feet comfortable.",
     fullDescription:
-      "Regular foot care keeps nails at a safe length and skin healthy. Each visit includes nail trimming and filing, gentle skin care and a quick check for any changes, so small problems are caught early. Ideal for clients who can no longer reach or trim their own nails.",
+      "Regular foot care keeps nails at a safe length and skin healthy. Each visit includes nail trimming and filing, gentle skin care and a quick check for any changes, so small problems are caught early. Ideal for anyone who finds it hard to reach or trim their own nails.",
     isActive: true,
     sortOrder: 2,
   },
@@ -395,9 +429,9 @@ export const defaultServices: ServiceData[] = [
     slug: "senior-foot-care",
     imageUrl: "/images/img6.png",
     iconName: "Users",
-    shortDescription: "Gentle, patient foot care for seniors at home or in residence.",
+    shortDescription: "Gentle, patient foot care for seniors, wherever they live.",
     fullDescription:
-      "As we age, nails thicken, skin becomes more fragile and reaching our feet gets harder. Our senior foot care visits combine nail care, corn and callus care and a foot health check, delivered with patience and respect in the comfort of home.",
+      "As we age, nails thicken, skin becomes more fragile and reaching our feet gets harder. Our senior foot care visits combine nail care, corn and callus care and a foot health check, delivered with patience and respect at home, in residence or in hospital.",
     isActive: true,
     sortOrder: 4,
   },
@@ -408,7 +442,7 @@ export const defaultServices: ServiceData[] = [
     iconName: "Layers",
     shortDescription: "Safe reduction of thick, hard or discoloured toenails.",
     fullDescription:
-      "Thick toenails can be painful, press against shoes and be very hard to cut at home. We safely file and reduce the nail thickness to relieve pressure and make nails easier to manage between visits.",
+      "Thick, yellow or discoloured toenails can be painful, press against shoes and be very hard to cut yourself. We safely file and reduce the nail thickness to relieve pressure and make nails easier to manage between visits.",
     isActive: true,
     sortOrder: 5,
   },
@@ -489,7 +523,7 @@ export const defaultTestimonials: TestimonialData[] = [
     clientName: "Sample Review",
     location: "Calgary, AB",
     rating: 5,
-    review: "Very professional and caring. The home visit was convenient and my mother felt completely comfortable.",
+    review: "Very professional and caring. The visit was convenient and my mother felt completely comfortable.",
     image: "",
     isPublished: false,
     sortOrder: 1,

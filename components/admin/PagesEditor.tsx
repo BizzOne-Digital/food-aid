@@ -62,6 +62,29 @@ const HOME: SectionDef[] = [
     ],
   },
   {
+    title: "We Come to You (animated car)",
+    fields: [
+      { key: "driveEyebrow", label: "Eyebrow", type: "text" },
+      { key: "driveTitle", label: "Heading", type: "text" },
+      { key: "driveHighlight", label: "Heading (red part)", type: "text" },
+      { key: "driveSubtitle", label: "Subtitle", type: "text" },
+      { key: "driveAreas", label: "Service Areas Line", type: "textarea", rows: 2 },
+      { key: "driveCtaKicker", label: "Button Small Text", type: "text" },
+      { key: "driveCtaLabel", label: "Button Label", type: "text" },
+    ],
+  },
+  {
+    title: "Benefits of Foot Care",
+    fields: [
+      { key: "benefitsEyebrow", label: "Eyebrow", type: "text" },
+      { key: "benefitsTitle", label: "Heading", type: "text" },
+      { key: "benefitsText", label: "Text", type: "textarea" },
+      { key: "benefitsImage", label: "Image (shown until the video loads)", type: "image" },
+      { key: "benefitsVideo", label: "Video URL (optional)", type: "text", hint: "MP4 in public/videos, e.g. /videos/foot-care.mp4, or a full https:// link. Leave empty to show only the image." },
+      { key: "benefits", label: "Benefits", type: "stringList" },
+    ],
+  },
+  {
     title: "Trust Strip (under hero)",
     fields: [{ key: "trustItems", label: "Trust Items", type: "objectList", fields: feature }],
   },
@@ -103,7 +126,7 @@ const HOME: SectionDef[] = [
     ],
   },
   {
-    title: "Retirement Homes & Care Facilities",
+    title: "Hospitals & Care Facilities",
     fields: [
       { key: "facilitiesEyebrow", label: "Eyebrow", type: "text" },
       { key: "facilitiesTitle", label: "Heading", type: "text" },

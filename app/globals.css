@@ -50,7 +50,30 @@
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
+/* "We come to you" car: drives in from the right, slows near the house, then repeats. */
+.drive-car { left: 100%; animation: drive-across 7s cubic-bezier(.45,.05,.3,1) infinite; }
+.drive-body { animation: drive-bounce .45s ease-in-out infinite; }
+.drive-wheel { animation: drive-spin .6s linear infinite; }
+.drive-print { opacity: 0; animation: drive-print 7s ease-out infinite; }
+@keyframes drive-across {
+  0% { left: 100%; opacity: 0; }
+  6% { opacity: 1; }
+  70% { left: max(14%, 84px); }
+  88% { left: max(14%, 84px); opacity: 1; }
+  100% { left: max(14%, 84px); opacity: 0; }
+}
+@keyframes drive-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.2px); } }
+@keyframes drive-spin { to { transform: rotate(-360deg); } }
+@keyframes drive-print {
+  0%, 8% { opacity: 0; }
+  20% { opacity: .55; }
+  75% { opacity: .55; }
+  100% { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .drive-car { left: 40% !important; animation: none !important; opacity: 1 !important; }
+  .drive-print { opacity: .5 !important; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }

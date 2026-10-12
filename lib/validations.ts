@@ -17,6 +17,8 @@ export const SERVICE_OPTIONS = [
   "Other",
 ] as const;
 
+export const LOCATION_OPTIONS = ["Home", "Care facility / retirement home", "Hospital", "Other"] as const;
+
 const phone = z
   .string()
   .trim()
@@ -33,6 +35,7 @@ export const bookingSchema = z.object({
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Please choose a date"),
   preferredTime: z.string().trim().min(1, "Please choose a time").max(30),
   service: z.enum(SERVICE_OPTIONS, { message: "Please choose a service" }),
+  locationType: z.enum(LOCATION_OPTIONS, { message: "Please choose where the visit will be" }),
   address: z.string().trim().min(3, "Please enter your address").max(200),
   city: z.string().trim().min(2, "Please enter your city").max(80),
   postalCode: z
@@ -77,6 +80,8 @@ export const serviceSchema = z.object({
     .max(100)
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Slug: lowercase letters, numbers and dashes"),
   imageUrl: imageUrl.default(""),
+  beforeImage: imageUrl.default(""),
+  afterImage: imageUrl.default(""),
   iconName: z.string().trim().max(40).default("Footprints"),
   shortDescription: z.string().trim().max(300).default(""),
   fullDescription: z.string().trim().max(5000).default(""),

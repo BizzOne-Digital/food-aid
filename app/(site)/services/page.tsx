@@ -15,15 +15,15 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Foot Care Services in Calgary: Senior, Diabetic & Nail Care",
   description:
-    "In-home foot care services in Calgary from a mobile foot care nurse: senior foot care, diabetic foot care, nail trimming, thickened and ingrown nails, corns, calluses and Onyfix. Free assessment for new clients.",
+    "Mobile foot care services in Calgary, at your home, care facility or hospital: senior foot care, diabetic foot care, nail trimming, thickened and ingrown nails, corns, calluses and Onyfix. Free assessment for new clients.",
   alternates: { canonical: "/services" },
 };
 
 const AUDIENCE = [
-  { Icon: Users, title: "Seniors", text: "Gentle, patient care for older adults at home." },
-  { Icon: Accessibility, title: "Limited Mobility", text: "For anyone who finds travel or clinic visits difficult." },
-  { Icon: House, title: "Homebound Clients", text: "Professional treatment without leaving home." },
-  { Icon: HandHeart, title: "In-Home Convenience", text: "For families who want reliable care for a loved one." },
+  { Icon: Users, title: "All Ages", text: "Professional foot and nail care for adults of every age." },
+  { Icon: HandHeart, title: "Diabetes & Circulation", text: "Careful, regular care for higher-risk feet." },
+  { Icon: Accessibility, title: "Seniors & Limited Mobility", text: "Gentle care for anyone who finds foot care hard." },
+  { Icon: House, title: "Home, Facility or Hospital", text: "Mobile only. We come to wherever you are." },
 ];
 
 export default async function ServicesPage() {
@@ -44,9 +44,9 @@ export default async function ServicesPage() {
       />
       <PageHero
         eyebrow="Our Services"
-        title={"Advanced Foot Care\nin the Comfort of Your Home"}
+        title={"Advanced Foot Care\nWherever You Are"}
         highlight="Advanced Foot Care"
-        intro="Mobile foot care nursing in Calgary for seniors, people living with diabetes and anyone who finds it hard to care for their own feet. New clients start with a free foot assessment."
+        intro="Mobile-only foot care nursing in Calgary for people of all ages. We come to your home, care facility or hospital. New clients start with a free foot assessment."
         image={IMAGES.footHold}
         imageAlt="Nurse holding a client's foot during an assessment"
       />
@@ -75,6 +75,25 @@ export default async function ServicesPage() {
                   <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-ink sm:text-[28px]">{s.title}</h2>
                   <p className="mt-2 text-[15px] font-medium text-brand">{s.shortDescription}</p>
                   <p className="mt-4 whitespace-pre-line text-[15.5px] leading-relaxed text-ink/80">{s.fullDescription}</p>
+                  {s.beforeImage && s.afterImage && (
+                    <figure className="mt-6">
+                      <div className="grid grid-cols-2 gap-3">
+                        {([["Before", s.beforeImage], ["After", s.afterImage]] as const).map(([label, src]) => (
+                          <div key={label} className="relative aspect-square overflow-hidden rounded-xl bg-soft">
+                            <Image
+                              src={resolveImageUrl(src)}
+                              alt={`${s.title}: ${label.toLowerCase()} treatment`}
+                              fill
+                              sizes="(min-width:768px) 240px, 45vw"
+                              className="object-cover"
+                            />
+                            <span className="absolute left-2 top-2 rounded-full bg-ink/80 px-2.5 py-0.5 text-xs font-bold text-white">{label}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <figcaption className="mt-2 text-xs text-muted">Real client result, shared with permission. Individual results vary.</figcaption>
+                    </figure>
+                  )}
                   <div>
                     <Link href={`/booking?service=${encodeURIComponent(s.title)}`} className="btn-primary mt-7">
                       Book This Service <ArrowRight className="h-4 w-4" aria-hidden />
@@ -120,7 +139,7 @@ export default async function ServicesPage() {
       </section>
 
       <CtaBand
-        title="Book Your In-Home Foot Care Visit"
+        title="Book Your Mobile Foot Care Visit"
         text="New clients get 20% off their first visit, plus a free foot assessment."
         phone={settings.phone}
       />

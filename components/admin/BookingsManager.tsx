@@ -13,6 +13,7 @@ type Booking = {
   email: string;
   phone: string;
   service: string;
+  locationType?: string;
   preferredDate: string;
   preferredTime: string;
   address: string;
@@ -176,6 +177,7 @@ export function BookingsManager({ initialStatus }: { initialStatus: string }) {
                       </a>
                       <p className="flex items-start gap-2 text-ink">
                         <MapPin className="mt-0.5 h-4 w-4 text-brand" aria-hidden />
+                        {b.locationType ? `${b.locationType}: ` : ""}
                         {b.address}, {b.city} {b.postalCode}
                       </p>
                       <p className="text-xs text-muted">Submitted {formatDate(b.createdAt, true)}</p>

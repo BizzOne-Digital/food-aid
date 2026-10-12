@@ -15,8 +15,8 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
   const items = [
     { Icon: Mail, label: "Email", value: settings.email, href: `mailto:${settings.email}` },
     { Icon: Phone, label: "Phone", value: settings.phone, href: telHref(settings.phone) },
-    { Icon: MapPin, label: "Location", value: settings.address, href: undefined },
-    { Icon: Navigation, label: "Service Area", value: "Serving surrounding areas", href: undefined },
+    { Icon: Navigation, label: "Mobile Service", value: "We come to your home, facility or hospital", href: undefined },
+    { Icon: MapPin, label: "Service Area", value: "Calgary & surrounding areas", href: undefined },
   ];
 
   return (

@@ -9,7 +9,7 @@ export const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const FOOTER_EXTRA_LINKS = [{ href: "/care-facilities", label: "Care Facilities" }] as const;
+export const FOOTER_EXTRA_LINKS = [{ href: "/care-facilities", label: "Hospitals & Facilities" }] as const;
 
 export function telHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;

@@ -33,7 +33,7 @@ export function Hero({ c }: { c: HomeContent }) {
       <div className="absolute inset-y-0 right-0 hidden w-full lg:block">
         <Image
           src={resolveImageUrl(c.heroImage)}
-          alt="Foot care nurse gently examining a senior client's foot at home"
+          alt="Foot care nurse gently examining a client's foot"
           fill
           priority
           sizes="100vw"
@@ -46,9 +46,9 @@ export function Hero({ c }: { c: HomeContent }) {
       </div>
 
       <div className="container-x relative">
-        <div className="max-w-[560px] py-12 sm:py-16 lg:flex lg:min-h-[clamp(540px,calc(100vh-66px),620px)] lg:flex-col lg:justify-center lg:py-14">
+        <div className="max-w-[680px] py-12 sm:py-16 lg:flex lg:min-h-[clamp(540px,calc(100vh-66px),620px)] lg:flex-col lg:justify-center lg:py-14">
           <p className="eyebrow animate-fade-up">{c.heroEyebrow}</p>
-          <h1 className="mt-4 animate-fade-up text-[40px] font-extrabold leading-[1.05] tracking-tight text-ink [animation-delay:80ms] sm:text-[52px] lg:text-[56px]">
+          <h1 className="mt-4 animate-fade-up text-[40px] font-extrabold leading-[1.05] tracking-tight text-ink [animation-delay:80ms] sm:text-[50px] lg:text-[54px]">
             <span className="block">{c.heroTitleLine1}</span>
             <span className="block">
               <span className="text-brand">{c.heroHighlight}</span> {c.heroTitleAfter}
@@ -88,7 +88,7 @@ export function Hero({ c }: { c: HomeContent }) {
       <div className="relative mx-4 mb-10 aspect-[4/3] overflow-hidden rounded-3xl sm:mx-6 sm:aspect-[16/10] lg:hidden">
         <Image
           src={resolveImageUrl(c.heroImage)}
-          alt="Foot care nurse gently examining a senior client's foot at home"
+          alt="Foot care nurse gently examining a client's foot"
           fill
           sizes="100vw"
           className="object-cover"

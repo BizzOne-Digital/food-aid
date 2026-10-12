@@ -12,7 +12,7 @@ import type { AboutSection } from "@/lib/defaults";
 export const metadata: Metadata = {
   title: "About Our Mobile Foot Care Nurse in Calgary",
   description:
-    "Foot Aid is a mobile foot care nurse providing compassionate, professional in-home foot care for seniors and people with mobility challenges in Calgary.",
+    "Foot Aid is a mobile-only foot care nurse in Calgary. We provide professional foot care for all ages at your home, care facility or hospital.",
   alternates: { canonical: "/about" },
 };
 

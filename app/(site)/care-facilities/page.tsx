@@ -6,15 +6,15 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getHomeContent, getSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Foot Care for Retirement Homes & Care Facilities in Calgary",
+  title: "Foot Care for Hospitals & Care Facilities in Calgary",
   description:
-    "On-site foot care nursing for retirement homes, assisted living and long-term care facilities in Calgary. Scheduled visits for residents, including diabetic and senior foot care.",
+    "On-site foot care nursing for hospitals, retirement homes, assisted living and long-term care facilities in Calgary. Bedside care for patients and scheduled visits for residents.",
   alternates: { canonical: "/care-facilities" },
 };
 
 const BENEFITS = [
   { Icon: CalendarClock, title: "Regular Schedule", text: "Recurring visits planned around your facility's routine." },
-  { Icon: Users, title: "Multiple Residents", text: "Several residents seen in one visit, on site." },
+  { Icon: Users, title: "Patients & Residents", text: "Bedside care in hospital or several residents per visit." },
   { Icon: ClipboardList, title: "Clear Records", text: "Care notes for staff and families after each visit." },
   { Icon: Building2, title: "Calgary & Area", text: "Serving facilities across Calgary and nearby communities." },
 ];
@@ -46,7 +46,7 @@ export default async function CareFacilitiesPage() {
         </div>
       </section>
       <CtaBand
-        title="Let's Talk About Your Residents' Foot Care"
+        title="Let's Talk About Foot Care for Your Patients or Residents"
         text="Tell us about your facility and we will suggest a visit schedule that works for you."
         label="Contact Us"
         href="/contact?subject=Care%20facility%20partnership"

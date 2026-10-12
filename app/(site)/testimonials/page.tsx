@@ -8,7 +8,7 @@ import { getPublishedTestimonials, getSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "Read what seniors and families in Calgary say about Foot Aid's mobile foot care service.",
+  description: "Read what clients in Calgary say about Foot Aid's mobile foot care service.",
   alternates: { canonical: "/testimonials" },
 };
 
@@ -20,7 +20,7 @@ export default async function TestimonialsPage() {
         eyebrow="What Our Clients Say"
         title={"Kind Words From\nOur Clients"}
         highlight="Our Clients"
-        intro="Feedback from seniors and families across Calgary who receive mobile foot care at home."
+        intro="Feedback from clients across Calgary who receive mobile foot care at home, in care facilities and in hospital."
       />
       <section className="py-14 sm:py-20">
         <div className="container-x">
@@ -46,7 +46,7 @@ export default async function TestimonialsPage() {
         </div>
       </section>
       <CtaBand
-        title="Experience Caring Foot Care at Home"
+        title="Experience Professional Foot Care, Wherever You Are"
         text="Join our clients across Calgary. Get 20% off your first visit plus a free foot assessment."
         phone={settings.phone}
       />

@@ -58,7 +58,7 @@ export function HowItWorks({ c }: { c: HomeContent }) {
         </ol>
         <div className="mt-12 text-center">
           <Link href="/booking" className="btn-primary px-8 py-3.5">
-            Request a Home Visit <ArrowRight className="h-4 w-4" aria-hidden />
+            Request a Visit <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
       </div>

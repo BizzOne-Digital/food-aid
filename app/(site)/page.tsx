@@ -5,6 +5,8 @@ import { AboutPreview } from "@/components/home/AboutPreview";
 import { PromoBanner } from "@/components/home/PromoBanner";
 import { TestimonialsPreview } from "@/components/home/TestimonialsPreview";
 import { FaqSection, FacilitiesSection, HowItWorks, SafetySection, SignsSection, TrustStrip } from "@/components/home/HomeSections";
+import { DriveToYou } from "@/components/home/DriveToYou";
+import { BenefitsSection } from "@/components/home/BenefitsSection";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getActiveServices, getHomeContent, getPublishedTestimonials, getSettings } from "@/lib/content";
@@ -42,7 +44,9 @@ export default async function HomePage() {
       )}
       <Hero c={c} />
       {c.trustItems.length > 0 && <TrustStrip c={c} />}
+      <DriveToYou c={c} phone={settings.phone} />
       <ServicesPreview c={c} services={services} />
+      {c.benefits.length > 0 && <BenefitsSection c={c} />}
       {c.steps.length > 0 && <HowItWorks c={c} />}
       <AboutPreview c={c} />
       {c.signs.length > 0 && <SignsSection c={c} />}

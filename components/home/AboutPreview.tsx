@@ -14,7 +14,7 @@ export function AboutPreview({ c }: { c: HomeContent }) {
         <div className="relative min-h-[340px] sm:min-h-[400px] lg:min-h-[420px]">
           <Image
             src={resolveImageUrl(c.aboutImage)}
-            alt="Relaxed senior resting their feet at home"
+            alt="Client resting their feet during a mobile foot care visit"
             fill
             sizes="(min-width:1024px) 46vw, 100vw"
             className="object-cover"

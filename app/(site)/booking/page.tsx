@@ -23,7 +23,7 @@ export default async function BookingPage({ searchParams }: { searchParams: Prom
             Book Your <span className="text-brand">Mobile Foot Care</span> Appointment
           </h1>
           <p className="mt-4 text-lg text-muted">
-            Send us your preferred date and time. We will call or email you to confirm your home visit.
+            Send us your preferred date and time. We will call or email you to confirm your visit at your home, care facility or hospital.
           </p>
         </div>
 

@@ -24,7 +24,10 @@ export async function PUT(req: Request, { params }: Ctx) {
   }
   const item = await Service.findByIdAndUpdate(id, parsed.data, { new: true }).lean();
   // Old image is removed only after the content update succeeded.
-  await cleanupReplacedImages(before.imageUrl, item?.imageUrl);
+  await cleanupReplacedImages(
+    [before.imageUrl, before.beforeImage, before.afterImage],
+    [item?.imageUrl, item?.beforeImage, item?.afterImage]
+  );
   revalidatePath("/", "layout");
   return NextResponse.json({ success: true, item });
 }
@@ -37,7 +40,7 @@ export async function DELETE(_req: Request, { params }: Ctx) {
   await connectDB();
   const doc = await Service.findByIdAndDelete(id).lean();
   if (!doc) return apiError("Service not found", 404);
-  await deleteStoredUploadByUrl(doc.imageUrl);
+  await Promise.all([doc.imageUrl, doc.beforeImage, doc.afterImage].map((u) => deleteStoredUploadByUrl(u)));
   revalidatePath("/", "layout");
   return NextResponse.json({ success: true });
 }

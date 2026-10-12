@@ -12,7 +12,7 @@ import { Modal } from "./Modal";
 import { SelectInput, TextInput, Toggle } from "./fields";
 
 type Svc = ServiceData & { _id?: string };
-const EMPTY: Svc = { title: "", slug: "", imageUrl: "", iconName: "Footprints", shortDescription: "", fullDescription: "", isActive: true, sortOrder: 0 };
+const EMPTY: Svc = { title: "", slug: "", imageUrl: "", beforeImage: "", afterImage: "", iconName: "Footprints", shortDescription: "", fullDescription: "", isActive: true, sortOrder: 0 };
 
 const slugify = (s: string) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -132,6 +132,13 @@ export function ServicesManager() {
               <TextInput label="Sort Order" type="number" value={String(editing.sortOrder)} onChange={(v) => set("sortOrder", Number(v) || 0)} />
             </div>
             <ImageUploadField label="Image" folder="products" value={editing.imageUrl} onChange={(v) => set("imageUrl", v)} />
+            <div className="grid gap-5 rounded-xl bg-soft p-4 sm:grid-cols-2">
+              <p className="text-sm text-muted sm:col-span-2">
+                Optional before/after photos. Use only real client results, shared with the client&apos;s permission. Shown on the Services page when both are added.
+              </p>
+              <ImageUploadField label="Before" folder="gallery" aspect="aspect-square" value={editing.beforeImage ?? ""} onChange={(v) => set("beforeImage", v)} />
+              <ImageUploadField label="After" folder="gallery" aspect="aspect-square" value={editing.afterImage ?? ""} onChange={(v) => set("afterImage", v)} />
+            </div>
             <TextInput label="Short Description" textarea rows={2} value={editing.shortDescription} error={errors.shortDescription} onChange={(v) => set("shortDescription", v)} />
             <TextInput label="Full Description" textarea rows={5} value={editing.fullDescription} error={errors.fullDescription} onChange={(v) => set("fullDescription", v)} />
             <Toggle label="Active (visible on website)" checked={editing.isActive} onChange={(v) => set("isActive", v)} />
