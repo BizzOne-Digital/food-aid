@@ -5,7 +5,7 @@ import { LazyVideo } from "@/components/ui/LazyVideo";
 import { resolveImageUrl } from "@/lib/image";
 import type { HomeContent } from "@/lib/defaults";
 
-/** "Benefits of foot care": organic-shaped real photo with benefit callouts. */
+/** Why foot care helps: organic-shaped video/photo with short benefit points. */
 export function BenefitsSection({ c }: { c: HomeContent }) {
   return (
     <section className="bg-[#f6f1ea] py-14 sm:py-20" aria-labelledby="benefits-heading">

@@ -74,7 +74,7 @@ const HOME: SectionDef[] = [
     ],
   },
   {
-    title: "Benefits of Foot Care",
+    title: "Why Foot Care Helps (video section)",
     fields: [
       { key: "benefitsEyebrow", label: "Eyebrow", type: "text" },
       { key: "benefitsTitle", label: "Heading", type: "text" },
