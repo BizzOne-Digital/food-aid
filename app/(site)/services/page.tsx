@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Accessibility, ArrowRight, House, HandHeart, Users } from "lucide-react";
+import { Accessibility, ArrowRight, BookOpen, CircleCheck, House, HandHeart, Users } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { CtaBand } from "@/components/ui/CtaBand";
 import { Icon, FootIcon } from "@/components/ui/Icon";
@@ -75,6 +75,25 @@ export default async function ServicesPage() {
                   <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-ink sm:text-[28px]">{s.title}</h2>
                   <p className="mt-2 text-[15px] font-medium text-brand">{s.shortDescription}</p>
                   <p className="mt-4 whitespace-pre-line text-[15.5px] leading-relaxed text-ink/80">{s.fullDescription}</p>
+                  {s.patientEducation?.trim() && (
+                    <div className="mt-6 rounded-xl bg-soft p-5">
+                      <h3 className="flex items-center gap-2 text-[15px] font-bold text-ink">
+                        <BookOpen className="h-5 w-5 text-brand" aria-hidden /> Patient Education
+                      </h3>
+                      <ul className="mt-3 space-y-2">
+                        {s.patientEducation
+                          .split("\n")
+                          .map((t) => t.trim())
+                          .filter(Boolean)
+                          .map((tip, k) => (
+                            <li key={k} className="flex items-start gap-2.5 text-[14.5px] leading-relaxed text-ink/80">
+                              <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                              {tip}
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                  )}
                   {s.beforeImage && s.afterImage && (
                     <figure className="mt-6">
                       <div className="grid grid-cols-2 gap-3">

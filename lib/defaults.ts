@@ -362,7 +362,7 @@ export type SiteSettingsData = {
 export const defaultSettings: SiteSettingsData = {
   businessName: "Foot Aid",
   tagline: "Mobile Foot Care Nurse",
-  email: "leymn.ali@gmail.com",
+  email: "info@footaid.com",
   phone: "+1 587-707-1099",
   address: "Calgary, Alberta",
   serviceArea: "Mobile service: we come to you",
@@ -391,6 +391,8 @@ export type ServiceData = {
   iconName: string;
   shortDescription: string;
   fullDescription: string;
+  /** Optional care tips, one per line. Shown as a Patient Education box. */
+  patientEducation?: string;
   isActive: boolean;
   sortOrder: number;
 };
@@ -414,7 +416,7 @@ export const defaultServices: ServiceData[] = [
     iconName: "Scissors",
     shortDescription: "Regular nail trimming, filing and skin care to keep feet comfortable.",
     fullDescription:
-      "Regular foot care keeps nails at a safe length and skin healthy. Each visit includes nail trimming and filing, gentle skin care and a quick check for any changes, so small problems are caught early. Ideal for anyone who finds it hard to reach or trim their own nails.",
+      "Regular foot care keeps nails at a safe length and skin healthy. Each visit includes nail trimming and filing, gentle skin care and a quick check for any changes, so small problems are caught early. Ideal for anyone who finds it hard to reach or trim their own nails.\n\nNails trimmed by a licensed Advanced Foot Care Nurse.",
     isActive: true,
     sortOrder: 2,
   },
@@ -443,11 +445,19 @@ export const defaultServices: ServiceData[] = [
   {
     title: "Thickened Nail Care",
     slug: "thickened-nail-care",
+    patientEducation: [
+      "Nails can thicken with age, pressure from tight shoes, injury, fungal infection or poor circulation.",
+      "Wear shoes with enough room for your toes, and change your socks every day.",
+      "Keep your feet clean and dry, especially between the toes.",
+      "Do not try to cut very thick nails yourself or use sharp tools at home.",
+      "If you have diabetes or poor circulation, have your nails trimmed by a professional.",
+      "See your doctor if a nail becomes painful, red, swollen or starts to lift.",
+    ].join("\n"),
     imageUrl: u("1633526543913-d30e3c230d1f", 900),
     iconName: "Layers",
     shortDescription: "Safe reduction of thick, hard or discoloured toenails.",
     fullDescription:
-      "Thick, yellow or discoloured toenails can be painful, press against shoes and be very hard to cut yourself. We safely file and reduce the nail thickness to relieve pressure and make nails easier to manage between visits.",
+      "Thick, yellow or discoloured toenails can be painful, press against shoes and be very hard to cut yourself. We safely file and reduce the nail thickness to relieve pressure and make nails easier to manage between visits.\n\nNails trimmed by a licensed Advanced Foot Care Nurse.",
     isActive: true,
     sortOrder: 5,
   },

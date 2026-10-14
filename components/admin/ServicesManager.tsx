@@ -12,7 +12,7 @@ import { Modal } from "./Modal";
 import { SelectInput, TextInput, Toggle } from "./fields";
 
 type Svc = ServiceData & { _id?: string };
-const EMPTY: Svc = { title: "", slug: "", imageUrl: "", beforeImage: "", afterImage: "", iconName: "Footprints", shortDescription: "", fullDescription: "", isActive: true, sortOrder: 0 };
+const EMPTY: Svc = { title: "", slug: "", imageUrl: "", beforeImage: "", afterImage: "", iconName: "Footprints", shortDescription: "", fullDescription: "", patientEducation: "", isActive: true, sortOrder: 0 };
 
 const slugify = (s: string) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -141,6 +141,15 @@ export function ServicesManager() {
             </div>
             <TextInput label="Short Description" textarea rows={2} value={editing.shortDescription} error={errors.shortDescription} onChange={(v) => set("shortDescription", v)} />
             <TextInput label="Full Description" textarea rows={5} value={editing.fullDescription} error={errors.fullDescription} onChange={(v) => set("fullDescription", v)} />
+            <TextInput
+              label="Patient Education (optional)"
+              textarea
+              rows={6}
+              value={editing.patientEducation ?? ""}
+              error={errors.patientEducation}
+              onChange={(v) => set("patientEducation", v)}
+              hint="One tip per line. Shown as a Patient Education box on the Services page."
+            />
             <Toggle label="Active (visible on website)" checked={editing.isActive} onChange={(v) => set("isActive", v)} />
             <div className="flex justify-end gap-2 border-t border-line pt-5">
               <button type="button" className="btn px-5 ring-1 ring-line" onClick={() => setEditing(null)}>

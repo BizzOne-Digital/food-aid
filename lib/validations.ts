@@ -85,6 +85,7 @@ export const serviceSchema = z.object({
   iconName: z.string().trim().max(40).default("Footprints"),
   shortDescription: z.string().trim().max(300).default(""),
   fullDescription: z.string().trim().max(5000).default(""),
+  patientEducation: z.string().trim().max(3000).default(""),
   isActive: z.boolean().default(true),
   sortOrder: z.coerce.number().int().default(0),
 });

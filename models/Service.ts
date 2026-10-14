@@ -10,6 +10,7 @@ const ServiceSchema = new Schema(
     iconName: { type: String, default: "Footprints" },
     shortDescription: { type: String, default: "" },
     fullDescription: { type: String, default: "" },
+    patientEducation: { type: String, default: "" },
     isActive: { type: Boolean, default: true },
     sortOrder: { type: Number, default: 0 },
   },
