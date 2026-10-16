@@ -17,7 +17,7 @@ Fill in `.env.local`:
 | `SESSION_SECRET` | `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` |
 | `ADMIN_EMAIL` | The admin login email |
 | `ADMIN_PASSWORD_HASH` | `npm run hash-password -- "YourStrongPassword"` (the script prints the value with each $ escaped for .env files) |
-| `NEXT_PUBLIC_SITE_URL` | e.g. `https://footaid.ca` (used for canonical URLs, sitemap and schema) |
+| `NEXT_PUBLIC_SITE_URL` | e.g. `https://www.myfootaid.com` (used for canonical URLs, sitemap and schema) |
 
 ```bash
 npm run seed      # services, home/about content, settings, 3 testimonials (add -- --force to reset)

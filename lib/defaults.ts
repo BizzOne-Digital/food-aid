@@ -362,7 +362,7 @@ export type SiteSettingsData = {
 export const defaultSettings: SiteSettingsData = {
   businessName: "Foot Aid",
   tagline: "Mobile Foot Care Nurse",
-  email: "info@footaid.com",
+  email: "info@myfootaid.com",
   phone: "+1 587-707-1099",
   address: "Calgary, Alberta",
   serviceArea: "Mobile service: we come to you",
