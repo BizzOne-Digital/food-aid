@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import { apiError, readJson, requireAdmin, zodError } from "@/lib/api";
 import { contactSchema } from "@/lib/validations";
 import { ContactMessage } from "@/models/ContactMessage";
+import { sendContactEmails } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -15,6 +16,7 @@ export async function POST(req: Request) {
   try {
     await connectDB();
     const doc = await ContactMessage.create(parsed.data);
+    after(() => sendContactEmails(parsed.data));
     return NextResponse.json({ success: true, id: String(doc._id) }, { status: 201 });
   } catch (e) {
     console.error("[contact] create failed", e);

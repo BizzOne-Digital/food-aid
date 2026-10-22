@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import { apiError, readJson, requireAdmin, zodError } from "@/lib/api";
 import { bookingSchema, BOOKING_STATUSES, type BookingStatus } from "@/lib/validations";
 import { Booking } from "@/models/Booking";
+import { sendBookingEmails } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -17,6 +18,8 @@ export async function POST(req: Request) {
   try {
     await connectDB();
     const doc = await Booking.create({ ...data, postalCode: data.postalCode.toUpperCase(), status: "New" });
+    // Email the business and the customer after responding, so the form stays fast.
+    after(() => sendBookingEmails({ ...data, postalCode: data.postalCode.toUpperCase() }));
     return NextResponse.json({ success: true, id: String(doc._id) }, { status: 201 });
   } catch (e) {
     console.error("[bookings] create failed", e);
